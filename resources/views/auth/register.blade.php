@@ -14,15 +14,15 @@
         <form action="{{ route('register') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                @error('username')
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" required>
+                @error('name')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required>
                 @error('email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
